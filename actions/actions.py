@@ -40,23 +40,35 @@ class ActionProcedureDescription(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
-        print(required_procedure, "\n\n\n\n")
-        # for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-        #     if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-        #         proc_name = data["subThematics"][0]["sub-subThematics"][i]["title"]
-        #         listOfDocuments = data["subThematics"][0]["sub-subThematics"][0]["details"]["documents"]
-        #         documents = list()
-        #         for i in range(len(listOfDocuments)):
-        #             documents.append(str(listOfDocuments[i]["title"]).capitalize())
-        #         documentsToShow = ""
-        #         for i in range(1, len(documents)+1):
-        #             documentsToShow += f"{i}. {documents[i-1]}.\n"
-        #         break
+        if isinstance(required_procedure ,str):
+            required_procedure = required_procedure.capitalize()
+        documentsToShow = ""
         
-        # if required_procedure == None:
-        #     dispatcher.utter_message(text=f"Provided procedure name does not found...")
-        #     return []
+        # Searching the procedure name received in entity
+        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
+            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
+                listOfDocuments = data["subThematics"][0]["sub-subThematics"][i]["details"]["documents"]
+                # Reteriving list of all the documents in json and storing only names of
+                # all documents in formatted way
+                for i in range(1, len(listOfDocuments)+1):
+                    document = str(listOfDocuments[i-1]["title"]).capitalize()
+                    documentsToShow += f"{i}. {document}.\n"
+                
+                # Stop the search if the required procedure is found in the data
+                break
         
-        # dispatcher.utter_message(text=f"To get {required_procedure} you have to file the following documents:\n{documentsToShow} ")
+        # getting the name of the Receiving Administrations site.
+        receivingAdministrations = ""
+        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
+            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
+                receivingAdministrations = data["subThematics"][0]["sub-subThematics"][i]["details"]["receivingAdministrations"][0]["title"]
+        documentsToShow += f"Above documents has to be submit in {receivingAdministrations}."
+        
+        # Handling the exceptional case
+        if required_procedure == None or documentsToShow == "":
+            dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
+            return []
+        
+        dispatcher.utter_message(text=f"To get {required_procedure} you have to file the following documents:\n{documentsToShow}")
 
         return []
