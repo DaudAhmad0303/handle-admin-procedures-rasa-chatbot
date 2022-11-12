@@ -35,3 +35,23 @@ stories:
   - action: action_procedure_description
   - intent: goodbye
   - action: utter_goodbye
+
+- story: Quering the Documents for Procedure
+  steps:
+  - intent: query_documents
+  - action: action_procedure_documents
+
+- story: Quering the location for Procedure
+  steps:
+  - intent: query_location
+  - action: action_procedure_delivering_administrations
+
+- story: Quering the price for Procedure
+  steps:
+  - intent: query_price
+  - action: action_procedure_price
+
+- story: Quering the Time delay for Procedure
+  steps:
+  - intent: query_delay
+  - action: action_procedure_delay
