@@ -9,6 +9,10 @@ intents:
   - mood_unhappy
   - bot_challenge
   - global_description_of_procedure
+  - query_documents
+  - query_location
+  - query_price
+  - query_delay
 
 responses:
   utter_greet:
@@ -33,6 +37,10 @@ responses:
 actions:
   - action_hello_world
   - action_procedure_description
+  - action_procedure_documents
+  - action_procedure_delivering_administrations
+  - action_procedure_price
+  - action_procedure_delay
 
 entities:
   - procedure_name

@@ -33,5 +33,10 @@ print("Following documents are required for the specified procedure:")
 for i in range(1, len(documents)+1):
     print(f"{i}. {documents[i-1]}.")
 
-val = None
-print()
+for i in range(6):
+    print("H")
+    # if i == 4:
+    #     break
+else:
+    print("HELLO")
+print("world")
