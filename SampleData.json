@@ -1,0 +1,81 @@
+{
+  "id": "f3df9503-d376-4eee-be44-0d2efc9e9007",
+  "title": "Transportation",
+  "description": "_",
+  "subThematics": [
+    {
+      "id": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+      "title": "Cars",
+      "description": "_",
+      "sub-subThematics": [
+        {
+          "id": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+          "title": "Medical certificate for drinving license",
+          "description": "in order to obtain a Medical certificate for drinving license",
+          "details": {
+            "price": "100",
+            "delay": " 3 ",
+            "averageDelay": 3,
+            "receivingAdministrations": [
+              {
+                "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                "locale": "ar",
+                "title": "Regional hospitals "
+              }
+            ],
+            "deliveringAdministrations": [
+              {
+                "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                "locale": "ar",
+                "title": "Regional hospitals "
+              }
+            ],
+            "linkedSubThematic": null,
+            "thematicId": "f3df9503-d376-4eee-be44-0d2efc9e9007",
+            "administrationInCharge": {
+              "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+              "locale": "ar",
+              "title": "Ministry of Health and Social Protection",
+              "proceduresCount": null
+            },
+            "validityDurationInDays": null,
+            "documents": [
+              {
+                "id": "499f14c8-e96e-41c1-82f9-79cf2c0d9db0",
+                "title": "Medical record",
+                "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                "linkedProcedures": [],
+                "sort": 2
+              },
+              {
+                "id": "11390daf-9b10-4e27-b9d5-e26e711c1cde",
+                "title": "A copy of the national identification card or a document proving the identity of the person concerned with the medical certificate",
+                "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                "linkedProcedures": [],
+                "sort": 3
+              },
+              {
+                "id": "e3cbe527-36b2-425f-9b6b-aaf11cef4803",
+                "title": "A recent photo",
+                "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                "linkedProcedures": [],
+                "sort": 4
+              },
+              {
+                "id": "fd982e4f-a196-49c4-82bf-52c6a7276161",
+                "title": "Receipt of payment of fees due for compulsory medical examinations",
+                "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                "linkedProcedures": [],
+                "sort": 6
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
