@@ -92,43 +92,43 @@ nlu:
 
 - intent: global_description_of_procedure
   examples: |
-    - How to get [Medical certificate for drinving license](procedure_name)
-    - Tell me how I can have [Medical certificate for drinving license](procedure_name)
-    - What should I do to have [Medical certificate for drinving license](procedure_name)
-    - Tell me how I can have [Medical certificate for drinving license](procedure_name)
-    - Tell me how I can obtain [Medical certificate for drinving license](procedure_name)
+    - How to get [Medical certificate for driving license](procedure_name)
+    - Tell me how I can have [Medical certificate for driving license](procedure_name)
+    - What should I do to have [Medical certificate for driving license](procedure_name)
+    - Tell me how I can have [Medical certificate for driving license](procedure_name)
+    - Tell me how I can obtain [Medical certificate for driving license](procedure_name)
 
 - intent: query_documents
   examples: |
-    - what are the required documents to [Medical certificate for drinving license](procedure_name)
-    - what are the required documents to have [Medical certificate for drinving license](procedure_name)
-    - what are the required documents to obtain [Medical certificate for drinving license](procedure_name)
-    - What documents are required to [Medical certificate for drinving license](procedure_name)
-    - What documents are required to have [Medical certificate for drinving license](procedure_name)
-    - What documents are required to obtain [Medical certificate for drinving license](procedure_name)
+    - what are the required documents to [Medical certificate for driving license](procedure_name)
+    - what are the required documents to have [Medical certificate for driving license](procedure_name)
+    - what are the required documents to obtain [Medical certificate for driving license](procedure_name)
+    - What documents are required to [Medical certificate for driving license](procedure_name)
+    - What documents are required to have [Medical certificate for driving license](procedure_name)
+    - What documents are required to obtain [Medical certificate for driving license](procedure_name)
 
 - intent: query_location
   examples: |
-    - which organisation is responsible of giving [Medical certificate for drinving license](procedure_name)
-    - Where can I get [Medical certificate for drinving license](procedure_name)
-    - which organisation is responsible of delivring [Medical certificate for drinving license](procedure_name)
-    - which public administrations is responsible of [Medical certificate for drinving license](procedure_name)
-    - Where can I have [Medical certificate for drinving license](procedure_name)
-    - Where can I obtain [Medical certificate for drinving license](procedure_name)
+    - which organisation is responsible of giving [Medical certificate for driving license](procedure_name)
+    - Where can I get [Medical certificate for driving license](procedure_name)
+    - which organisation is responsible of delivring [Medical certificate for driving license](procedure_name)
+    - which public administrations is responsible of [Medical certificate for driving license](procedure_name)
+    - Where can I have [Medical certificate for driving license](procedure_name)
+    - Where can I obtain [Medical certificate for driving license](procedure_name)
 
 - intent: query_price
   examples: |
-    - how much should I pay to [Medical certificate for drinving license](procedure_name)
-    - how much should I pay to have [Medical certificate for drinving license](procedure_name)
-    - how much should I pay to obtain [Medical certificate for drinving license](procedure_name)
-    - What is the price to [Medical certificate for drinving license](procedure_name)
+    - how much should I pay to [Medical certificate for driving license](procedure_name)
+    - how much should I pay to have [Medical certificate for driving license](procedure_name)
+    - how much should I pay to obtain [Medical certificate for driving license](procedure_name)
+    - What is the price to [Medical certificate for driving license](procedure_name)
 
 - intent: query_delay
   examples: |
-    - How much time do I need to [Medical certificate for drinving license](procedure_name)
-    - How much time do I need to have [Medical certificate for drinving license](procedure_name)
-    - How much time do I need to obtain [Medical certificate for drinving license](procedure_name)
-    - how much time does it take to [Medical certificate for drinving license](procedure_name)
-    - how much time does it take to have [Medical certificate for drinving license](procedure_name)
-    - how much time does it take to obtain [Medical certificate for drinving license](procedure_name)
+    - How much time do I need to [Medical certificate for driving license](procedure_name)
+    - How much time do I need to have [Medical certificate for driving license](procedure_name)
+    - How much time do I need to obtain [Medical certificate for driving license](procedure_name)
+    - how much time does it take to [Medical certificate for driving license](procedure_name)
+    - how much time does it take to have [Medical certificate for driving license](procedure_name)
+    - how much time does it take to obtain [Medical certificate for driving license](procedure_name)
 

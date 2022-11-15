@@ -63,14 +63,14 @@ class ActionProcedureDescription(Action):
             if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
                 receivingAdministrations = data["subThematics"][0]["sub-subThematics"][i]["details"]["receivingAdministrations"][0]["title"]
         else:
-            documentsToShow += f"in {receivingAdministrations}."
+            documentsToShow += f" in {receivingAdministrations}."
         
         # Handling the exceptional case
         if required_procedure == None or documentsToShow == "":
             dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
             return []
         
-        dispatcher.utter_message(text=f"To get {required_procedure}, you have to file the following documents {documentsToShow} ")
+        dispatcher.utter_message(text=f"To get {required_procedure}, you have to file the following documents; {documentsToShow} ")
 
         return []
 
@@ -84,6 +84,7 @@ class ActionProcedureDocuments(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
+        print(required_procedure, type(required_procedure))
         if isinstance(required_procedure ,str):
             required_procedure = required_procedure.capitalize()
         documentsToShow = ""
