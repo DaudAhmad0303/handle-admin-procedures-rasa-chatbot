@@ -1,0 +1,30 @@
+Installation Guide for RASA in Windows OS in Anaconda
+
+
+1. Open Anadonda prompt and create a new virtual environment named 'rasa', name could be anything.
+$ conda create -n rasa python=3.8
+
+2. Now activate the environment
+$ conda activate rasa
+
+3. Before further working we needs 'Microsoft Build Tool' already installed as a dependency in RASA
+
+4. Now install rasa latest version
+$ pip install rasa
+
+5. Now install rasa-sdk
+$ pip install rasa-sdk
+
+After above installations, you can verify them with the following command:
+$ rasa --version
+result:
+Rasa Version      :         3.3.1
+Minimum Compatible Version: 3.0.0
+Rasa SDK Version  :         3.3.0
+Python Version    :         3.8.13
+Operating System  :         Windows-10-10.0.19044-SP0
+Python Path       :         C:\Users\mycomputer\.conda\envs\rasa\python.exe
+
+
+                                        Best of Luck
+---------------------------------------------------------------------------------------------------
