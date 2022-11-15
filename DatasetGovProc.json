@@ -1,0 +1,366 @@
+{
+  "data": [
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Health and Social Affairs ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+          "title": "Benefit from health coverage services ",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "f161ba70-3e5c-4590-af02-00014a3efe76",
+              "title": "Approval of refund for very expensive drugs",
+              "description": " ",
+              "details": {
+                "price": 0,
+                "delay": "4 أيام \nالمراقبة الطبية 7 أيام",
+                "averageDelay": 11,
+                "receivingAdministrations": [
+                  {
+                    "id": "83a797ed-5d3a-44e0-9abd-e93e3b4e7119",
+                    "locale": "ar",
+                    "title": "CNOPS"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "33c27da3-55bb-4840-a556-74c381b650db",
+                    "locale": "ar",
+                    "title": "CNOPS"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "b08b3727-775a-460c-b31f-a3048323e40b",
+                  "locale": "ar",
+                  "title": "CNOPS",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "d8b80980-9391-441f-a366-02c31780ec65",
+                    "title": "TCare sheet",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "2d7840c0-90c5-482c-88aa-9bdf1d176035",
+                    "title": "Medical reports and clinical and sub-clinical examinations justifying the prescription",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "579a1a9f-0cf2-4632-b36f-e19f6a8d8064",
+                    "title": "Medical prescription",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Health and social affairs",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+          "title": "Hospitalization",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "df79ce1f-f611-4ae8-8813-493062739dff",
+              "title": "a copy of the medical record",
+              "description": "Obtain a copy of the medical record for administrative, judicial or personal purposes",
+              "details": {
+                "price": 0,
+                "delay": "3 أيام",
+                "averageDelay": 3,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "Ministry of health and social protection",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "50854ed4-4433-4f80-a139-dbed8cc13964",
+                    "title": "Copy of the national ID card ",
+                    "procedureId": "df79ce1f-f611-4ae8-8813-493062739dff",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "120daf56-f39f-4361-8022-3fb6d5c8cd59",
+                    "title": "Request for the medical record",
+                    "procedureId": "df79ce1f-f611-4ae8-8813-493062739dff",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3c24d99e-bd57-4875-88dd-b8d136df064d",
+      "title": "Security and safety",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+          "title": "Professional safety",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "89058abf-ef1d-421c-905d-f7c9723146eb",
+              "title": "Medical certificate for workspace accident ",
+              "description": "For administrative or judicial purposes",
+              "details": {
+                "price": 0,
+                "delay": "على الفور",
+                "averageDelay": 0,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "3c24d99e-bd57-4875-88dd-b8d136df064d",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "Ministry of Health and Social Protection",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "8367b2ec-f6c4-4ed2-8efc-3fceeecbd502",
+                    "title": "Copy of the national ID card",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "e09f027c-6a97-4f19-93eb-94f4fdd6d36f",
+                    "title": "Incident Investigation certificate from an insurance company",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "1a59f7b9-db8e-4d52-80da-ee17114df62e",
+                    "title": "Employer statement",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Health and social affairs ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+          "title": "Medical insurance",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+              "title": "obtain a prior authorisation for direct coverage of medical expenses",
+              "details": {
+                "price": 0,
+                "averageDelay": 14,
+                "receivingAdministrations": [
+                  {
+                    "id": "33c27da3-55bb-4840-a556-74c381b650db",
+                    "locale": "ar",
+                    "title": "CNOPS"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "83a797ed-5d3a-44e0-9abd-e93e3b4e7119",
+                    "locale": "ar",
+                    "title": "CNOPS"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "b08b3727-775a-460c-b31f-a3048323e40b",
+                  "locale": "ar",
+                  "title": "CNOPS",
+                  "proceduresCount": null
+                },
+                "documents": [
+                  {
+                    "id": "b0484f92-a575-464b-93cf-2b3927637cc7",
+                    "title": "Hospital Admission Form",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "40f009fb-d5fa-459d-aa2c-874071e12030",
+                    "title": "Medical record",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "6083f051-4bc3-4cfe-b719-c3d9dbb9a6eb",
+                    "title": "Medical reports and clinical and sub-clinical examinations ",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f3df9503-d376-4eee-be44-0d2efc9e9007",
+      "title": "Transportation",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+          "title": "Cars",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+              "title": "Medical certificate for drinving license",
+              "description": "in order to obtain a Medical certificate for drinving license",
+              "details": {
+                "price": "100",
+                "delay": " 3 ",
+                "averageDelay": 3,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals "
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Regional hospitals "
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "f3df9503-d376-4eee-be44-0d2efc9e9007",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "Ministry of Health and Social Protection",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "499f14c8-e96e-41c1-82f9-79cf2c0d9db0",
+                    "title": "Medical record",
+                    "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                    "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  },
+                  {
+                    "id": "11390daf-9b10-4e27-b9d5-e26e711c1cde",
+                    "title": "A copy of the national ID card or a document proving the identity of the person concerned with the medical certificate",
+                    "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                    "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                    "linkedProcedures": [],
+                    "sort": 3
+                  },
+                  {
+                    "id": "e3cbe527-36b2-425f-9b6b-aaf11cef4803",
+                    "title": "A recent photo",
+                    "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                    "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                    "linkedProcedures": [],
+                    "sort": 4
+                  },
+                  {
+                    "id": "fd982e4f-a196-49c4-82bf-52c6a7276161",
+                    "title": "Receipt of payment of fees due for compulsory medical examinations",
+                    "procedureId": "e4cdc2c6-8e08-4940-b57a-7d970063d0d1",
+                    "subThematicId": "4d4acba4-428b-4cd1-9940-b1479d68dca2",
+                    "linkedProcedures": [],
+                    "sort": 6
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

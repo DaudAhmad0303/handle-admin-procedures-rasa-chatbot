@@ -97,7 +97,7 @@ class ActionProcedureDocuments(Action):
                 # all documents in formatted way
                 for i in range(1, len(listOfDocuments)+1):
                     document = str(listOfDocuments[i-1]["title"]).capitalize()
-                    documentsToShow += f"{i}. {document}.\n"
+                    documentsToShow += f"{i}. {document}.<br>"
                 
                 # Stop the search if the required procedure is found in the data
                 break
@@ -109,12 +109,12 @@ class ActionProcedureDocuments(Action):
                 receivingAdministrations = data["subThematics"][0]["sub-subThematics"][i]["details"]["receivingAdministrations"][0]["title"]
         documentsToShow += f"These documents must be filed in {receivingAdministrations}."
         
-        # Handling the exceptional case
+        # Handling the exceptional case move this section to line no 105
         if required_procedure == None or documentsToShow == "":
             dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
             return []
         
-        dispatcher.utter_message(text=f"Here is the documents list:\n{documentsToShow}")
+        dispatcher.utter_message(text=f"Here is the documents list:<br>{documentsToShow}")
 
         return []
 
