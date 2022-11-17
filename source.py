@@ -36,6 +36,17 @@ with open("DatasetGovProc.json", encoding='UTF-8') as file:
 
 # # New Document ('DatasetGovProc.json') based Extracting
 # For Searching the procedure name in JSON
-for i in range(len(data['data'][0])):
-    proc_name = data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]
-    print("Procedure Name:", str(proc_name).capitalize())
+# for i in range(len(data['data'][0])):
+#     proc_name = data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]
+#     print("Procedure Name:", str(proc_name).capitalize())
+
+# # For Searching the procedure Description in JSON
+# for i in range(len(data['data'][0])):
+#     if "description" in data["data"][i]["subThematics"][0]["govprocedure"][0]:
+#         proc_description = data["data"][i]["subThematics"][0]["govprocedure"][0]["description"]
+#         print("Procedure Description:", str(proc_description).capitalize())
+
+# # To print the receiving administration name
+# for i in range(len(data['data'][0])):
+#     receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
+#     print("Procedure Receiving Administration:", receivingAdministrationName)
