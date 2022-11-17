@@ -93,10 +93,10 @@ nlu:
 - intent: global_description_of_procedure
   examples: |
     - How to get [Medical certificate for driving license](procedure_name)
-    - Tell me how I can have [Medical certificate for driving license](procedure_name)
-    - What should I do to have [Medical certificate for driving license](procedure_name)
-    - Tell me how I can have [Medical certificate for driving license](procedure_name)
-    - Tell me how I can obtain [Medical certificate for driving license](procedure_name)
+    - Tell me how I can have [Approval of refund for very expensive drugs](procedure_name)
+    - What should I do to have [a copy of the medical record](procedure_name)
+    - Tell me how I can have [Medical certificate for workspace accident](procedure_name)
+    - Tell me how I can obtain [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
 
 - intent: query_documents
   examples: |
@@ -105,12 +105,16 @@ nlu:
     - what are the required documents to obtain [Medical certificate for driving license](procedure_name)
     - What documents are required to [Medical certificate for driving license](procedure_name)
     - What documents are required to have [Medical certificate for driving license](procedure_name)
+    - What documents are required to get [Medical certificate for driving license](procedure_name)
     - What documents are required to obtain [Medical certificate for driving license](procedure_name)
+    - Give me all required documents for [Medical certificate for workspace accident](procedure_name)
+    - Give me the list of required documents to [Medical certificate for workspace accident](procedure_name)
+    - Give me the list of required documents to obtain [Medical certificate for workspace accident](procedure_name)
 
 - intent: query_location
   examples: |
     - which organisation is responsible of giving [Medical certificate for driving license](procedure_name)
-    - Where can I get [Medical certificate for driving license](procedure_name)
+    - Where can I [Medical certificate for driving license](procedure_name)
     - which organisation is responsible of delivring [Medical certificate for driving license](procedure_name)
     - which public administrations is responsible of [Medical certificate for driving license](procedure_name)
     - Where can I have [Medical certificate for driving license](procedure_name)

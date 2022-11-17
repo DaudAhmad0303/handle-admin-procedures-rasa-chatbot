@@ -8,11 +8,21 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - global_description_of_procedure
-  - query_documents
-  - query_location
-  - query_price
-  - query_delay
+  - global_description_of_procedure:
+      use_entities:
+        - procedure_name
+  - query_documents:
+      use_entities:
+        - procedure_name
+  - query_location:
+      use_entities:
+        - procedure_name
+  - query_price:
+      use_entities:
+        - procedure_name
+  - query_delay:
+      use_entities:
+        - procedure_name
 
 responses:
   utter_greet:

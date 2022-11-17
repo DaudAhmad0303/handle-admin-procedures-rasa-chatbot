@@ -33,6 +33,7 @@ with open("DatasetGovProc.json", encoding='UTF-8') as file:
 # for i in range(1, len(documents)+1):
 #     print(f"{i}. {documents[i-1]}.")
 
+# -----------------------------------------------------------------------------------------------------------------
 
 # # New Document ('DatasetGovProc.json') based Extracting
 # For Searching the procedure name in JSON
@@ -53,10 +54,16 @@ with open("DatasetGovProc.json", encoding='UTF-8') as file:
 #         receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
 #         print("Procedure Receiving Administration:", receivingAdministrationName)
 
-# # To print the delay in service
+# # To print the administration Incharge name
 # for i in range(len(data['data'][0])):
-#     if "delay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
-#         timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["delay"]
+#     if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
+#         receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
+#         print("Procedure Administration Incharge:", receivingAdministrationName)
+
+# # To print the average delay in service
+# for i in range(len(data['data'][0])):
+#     if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+#         timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
 #         print("Time Taken for Procedure:", timeDelayed)
 
 # # To print the price to pay for a Procedure
