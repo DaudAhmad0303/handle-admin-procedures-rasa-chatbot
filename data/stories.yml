@@ -33,8 +33,6 @@ stories:
   steps:
   - intent: global_description_of_procedure
   - action: action_procedure_description
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: Quering the Documents for Procedure
   steps:

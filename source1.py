@@ -24,9 +24,9 @@ def get_matched_procedure(procedure :str):
     
     # Stroring all the names of the procedures in a list
     all_procedure_names = list()
-    for i in range(len(data['data'][0])):
+    for i in range(len(data['data'])):
         proc_name = data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]
-        all_procedure_names.append(str(proc_name).capitalize().strip())
+        all_procedure_names.append(proc_name)
     
     # Finding the only one string with maximum matching ratio and 
     # its matching ratio all available strings
@@ -38,7 +38,7 @@ def get_matched_procedure(procedure :str):
         return None
 
 
-print(get_matched_procedure("approval of refund of expensive drugs"))
+print(get_matched_procedure("Medical certificate for driving license"))
 print(get_matched_procedure("passport"))
 
 # str_list = ['Joe Biden', 'Joseph Biden', 'Joseph R Biden']

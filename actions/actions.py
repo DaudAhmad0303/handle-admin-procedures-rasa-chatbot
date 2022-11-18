@@ -39,9 +39,9 @@ def get_matched_procedure(procedure :str):
     
     # Stroring all the names of the procedures in a list
     all_procedure_names = list()
-    for i in range(len(data['data'][0])):
+    for i in range(len(data['data'])):
         proc_name = data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]
-        all_procedure_names.append(str(proc_name).capitalize().strip())
+        all_procedure_names.append(proc_name)
     
     # Finding the only one string with maximum matching ratio and 
     # its matching ratio all available strings
@@ -80,20 +80,18 @@ class ActionProcedureDescription(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure)
+        print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
         
-        # Handling the exceptional case
-        if required_procedure == None:
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
-            return []
-        
         documentsToShow = ""
+        final_text = ""
+        receivingAdministrations = ""
+        timeDelayed = ""
         
         # Searching the procedure name received in entity
-        for i in range(len(data['data'][0])):
+        for i in range(len(data['data'])):
             if "documents" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
                 if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
                     listOfDocuments = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["documents"]
@@ -103,47 +101,39 @@ class ActionProcedureDescription(Action):
                         document = str(listOfDocuments[i-1]["title"]).capitalize()
                         documentsToShow += f"{document}, "
                     documentsToShow = documentsToShow[:-2]
+                    
+                    # getting the name of the Receiving Administrations site.
+                    if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]:
+                        receivingAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
+                    
+                    final_text = f"You have to submit the following documents for {required_procedure}; {documentsToShow} to the {receivingAdministrations}.<br>"
+                    
+                    # getting the average delay for the procedure
+                    if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+                        timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
+                    
+                    final_text += f"This procedure takes {timeDelayed} day(s)"
+                    
+                    # getting the cost for the procedure
+                    if "price" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+                        priceForProcedure = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["price"]
+                        if priceForProcedure != 0:
+                            final_text += f" and costs {priceForProcedure} dollars.<br>"
+                        else:
+                            final_text += f" and the procedure is free of cost.<br>"
+                    
+                    # getting the administration incharge name.
+                    if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
+                        receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
+                        final_text += f"For more information , you can reach out to the {receivingAdministrationName}."
+                    
                     # Stop the search if the required procedure is found in the data
                     break
         
-        # getting the name of the Receiving Administrations site.
-        receivingAdministrations = ""
-        for i in range(len(data['data'][0])):
-            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
-                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]:
-                    receivingAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
-                break
-        
-        documentsToShow += f" to the {receivingAdministrations}.<br>"
-        
-        
-        final_text = f"You have to submit the following documents for {required_procedure}; {documentsToShow}"
-        
-        # getting the average delay for the procedure
-        for i in range(len(data['data'][0])):
-            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
-                if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
-                    timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
-                    final_text += f"This procedure takes {timeDelayed} day(s)"
-                break
-        
-        # getting the cost for the procedure
-        for i in range(len(data['data'][0])):
-            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
-                if "price" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
-                    priceForProcedure = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["price"]
-                    if priceForProcedure != 0:
-                        final_text += f" and costs {priceForProcedure} dollars.<br>"
-                    else:
-                        final_text += f" and the procedure is free of cost.<br>"
-                break
-        
-        # getting the administration incharge name.
-        for i in range(len(data['data'][0])):
-            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
-                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
-                    receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
-                    final_text += f"For more information , you can reach out to the {receivingAdministrationName}."
+        # Handling the exceptional case
+        if required_procedure == None or final_text == "":
+            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            return []
         
         dispatcher.utter_message(text=final_text)
 
@@ -158,38 +148,42 @@ class ActionProcedureDocuments(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
-        print(required_procedure, type(required_procedure))
-        if isinstance(required_procedure ,str):
-            required_procedure = required_procedure.capitalize()
+        required_procedure = None
+        
+        # storing the entity `procedure_name` received through intent
+        received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
+        
+        print(received_procedure, self.name())
+        # getting the most possible matching procedure name from the database, 
+        # if the user mis-spelled the procedure name
+        required_procedure = get_matched_procedure(received_procedure)
+        
         documentsToShow = ""
+        final_text = ""
         
         # Searching the procedure name received in entity
-        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-                listOfDocuments = data["subThematics"][0]["sub-subThematics"][i]["details"]["documents"]
-                # Reteriving list of all the documents in json and storing only names of
-                # all documents in formatted way
-                for i in range(1, len(listOfDocuments)+1):
-                    document = str(listOfDocuments[i-1]["title"]).capitalize()
-                    documentsToShow += f"{i}. {document}.<br>"
-                
-                # Stop the search if the required procedure is found in the data
-                break
+        for i in range(len(data['data'])):
+            if "documents" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+                if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
+                    listOfDocuments = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["documents"]
+                    # Reteriving list of all the documents for a particular procedure and storing only names of
+                    # all documents in formatted way
+                    for i in range(1, len(listOfDocuments)+1):
+                        document = str(listOfDocuments[i-1]["title"]).capitalize()
+                        documentsToShow += f"{i}) {document}.<br>"
+                    documentsToShow = documentsToShow[:-4]
+                    
+                    final_text = f"You can find below the list of required documents :<br>{documentsToShow}"
+                    
+                    # Stop the search if the required procedure is found in the data
+                    break
         
-        # getting the name of the Receiving Administrations site.
-        receivingAdministrations = ""
-        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-                receivingAdministrations = data["subThematics"][0]["sub-subThematics"][i]["details"]["receivingAdministrations"][0]["title"]
-        documentsToShow += f"These documents must be filed in {receivingAdministrations}."
-        
-        # Handling the exceptional case move this section to line no 105
-        if required_procedure == None or documentsToShow == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
+        # Handling the exceptional case
+        if required_procedure == None or final_text == "":
+            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
             return []
         
-        dispatcher.utter_message(text=f"Here is the documents list:<br>{documentsToShow}")
+        dispatcher.utter_message(text=final_text)
 
         return []
 
@@ -202,21 +196,32 @@ class ActionProcedureDeliveringAdministrations(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
-        if isinstance(required_procedure ,str):
-            required_procedure = required_procedure.capitalize()
+        required_procedure = None
+        
+        # storing the entity `procedure_name` received through intent
+        received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
+        
+        print(received_procedure, self.name())
+        # getting the most possible matching procedure name from the database, 
+        # if the user mis-spelled the procedure name
+        required_procedure = get_matched_procedure(received_procedure)
+        
         outputToShow = ""
 
         # getting the name of the Delivering Administrations site.
         deliveringAdministrations = ""
-        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-                deliveringAdministrations = data["subThematics"][0]["sub-subThematics"][i]["details"]["deliveringAdministrations"][0]["title"]
-        outputToShow += f"You can get it from {deliveringAdministrations}."
+        for i in range(len(data['data'])):
+            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
+                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["deliveringAdministrations"][0]:
+                    deliveringAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["deliveringAdministrations"][0]["title"]
+                
+                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
+                    AdministrationInchargeName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
+                outputToShow += f"You can get {required_procedure} from {deliveringAdministrations}.<br>This procedure is supervised by the {AdministrationInchargeName}."
         
         # Handling the exceptional case
         if required_procedure == None or outputToShow == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
+            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
             return []
         
         dispatcher.utter_message(text=outputToShow)
@@ -232,23 +237,35 @@ class ActionProcedurePrice(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
-        if isinstance(required_procedure ,str):
-            required_procedure = required_procedure.capitalize()
-
+        required_procedure = None
+        
+        # storing the entity `procedure_name` received through intent
+        received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
+        
+        print(received_procedure, self.name())
+        # getting the most possible matching procedure name from the database, 
+        # if the user mis-spelled the procedure name
+        required_procedure = get_matched_procedure(received_procedure)
+        
+        final_text = ""
         # getting the price for the procedure.
-        price = ""
-        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-                price = data["subThematics"][0]["sub-subThematics"][i]["details"]["price"]
+        for i in range(len(data['data'])):
+            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
+                if "price" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+                    priceForProcedure = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["price"]
+                    priceForProcedure = int(str(priceForProcedure).strip())
+                    if priceForProcedure != 0:
+                        final_text += f"The procedure costs {priceForProcedure} dollars.<br>"
+                    else:
+                        final_text += f"The procedure is free of cost.<br>"
+                break
         
         # Handling the exceptional case
-        if required_procedure == None:
-            dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
+        if required_procedure == None or final_text == "":
+            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
             return []
-        
-        dispatcher.utter_message(text=f"The procedure costs {price}.")
 
+        dispatcher.utter_message(text=final_text)
         return []
 
 class ActionProcedureDelay(Action):
@@ -260,21 +277,30 @@ class ActionProcedureDelay(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        required_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
-        if isinstance(required_procedure ,str):
-            required_procedure = required_procedure.capitalize()
-
+        required_procedure = None
+        
+        # storing the entity `procedure_name` received through intent
+        received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
+        
+        print(received_procedure, self.name())
+        # getting the most possible matching procedure name from the database, 
+        # if the user mis-spelled the procedure name
+        required_procedure = get_matched_procedure(received_procedure)
+        
         # getting the time delay for the procedure.
-        delay = ""
-        for i in range(len(data["subThematics"][0]["sub-subThematics"])):
-            if required_procedure == data["subThematics"][0]["sub-subThematics"][i]["title"]:
-                delay = data["subThematics"][0]["sub-subThematics"][i]["details"]["delay"]
+        final_text = ""
+        for i in range(len(data['data'])):
+            if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
+                if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
+                    timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
+                    final_text += f"This procedure takes {timeDelayed} day(s)."
+                break
         
         # Handling the exceptional case
-        if required_procedure == None:
-            dispatcher.utter_message(text=f"Provided procedure name does not found!\nPlease try re-phrasing it...")
+        if required_procedure == None or final_text == "":
+            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
             return []
         
-        dispatcher.utter_message(text=f"The procedure takes {delay} days.")
+        dispatcher.utter_message(text=final_text)
 
         return []
