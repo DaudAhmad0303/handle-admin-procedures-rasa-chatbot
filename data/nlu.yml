@@ -92,49 +92,44 @@ nlu:
 
 - intent: global_description_of_procedure
   examples: |
-    - How to get [Medical certificate for driving license](procedure_name)
-    - Tell me how I can have [Approval of refund for very expensive drugs](procedure_name)
-    - What should I do to have [a copy of the medical record](procedure_name)
-    - Tell me how I can have [Medical certificate for workspace accident](procedure_name)
-    - Tell me how I can obtain [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
+    - Comment avoir un [rapport médical](procedure_name)
+    - Comment obtenir une [attestation de couverture médicale](procedure_name)
+    - Comment faire pour obtenir [prise en charge des médicaments couteux](procedure_name)
+    - Qu'est ce qu'il faut faire pour obtenir [copie du dossier médical](procedure_name)
+    - Qu'est ce qu'il faut faire pour avoir [certificat médical pour accident de travail](procedure_name)
+    - Qu'est ce que je dois faire pour [une copie du dossier médical](procedure_name)
+    - Dis moi ce que je dois faire pour disposer[prise en charge médicale pour une hospitalisation](procedure_name)
 
 - intent: query_documents
   examples: |
-    - what are the required documents to [Medical certificate for driving license](procedure_name)
-    - what are the required documents to have [a copy of the medical record](procedure_name)
-    - what are the required documents to obtain [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
-    - What documents are required to [Medical certificate for driving license](procedure_name)
-    - What documents are required to have [Medical certificate for driving license](procedure_name)
-    - What documents are required to get [Approval of refund for very expensive drugs](procedure_name)
-    - What documents are required to obtain [Medical certificate for driving license](procedure_name)
-    - Give me all required documents for [Medical certificate for workspace accident](procedure_name)
-    - Give me the list of required documents to [Medical certificate for workspace accident](procedure_name)
-    - Give me the list of required documents to obtain [Approval of refund for very expensive drugs](procedure_name)
+    - Quels sont les documents nécessaires pour avoir un [rapport médical](procedure_name)
+    - Quels sont les documents demandés pour avoir [prise en charge des médicaments couteux](procedure_name)
+    - Quels sont les documents nécessaires pour obtenir [copie du dossier médical](procedure_name)
+    - Quels sont les documents requis pour [attestation de couverture médicale](procedure_name)
+    - Quelles sont les pièces nécessaires pour avoir un [rapport médical](procedure_name)
+    - Quelles sont les pièces requises [prise en charge des médicaments couteux](procedure_name)
+    - Quelle est la liste des documents requis pour avoir [certificat médical pour accident de travail](procedure_name)
+    - Donnes moi la liste des documents nécessaires pour avoir [prise en charge médicale pour une hospitalisation](procedure_name)
 
 - intent: query_location
   examples: |
-    - which organisation is responsible of giving [Medical certificate for driving license](procedure_name)
-    - Where can I [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
-    - which organisation is responsible of delivring [a copy of the medical record](procedure_name)
-    - which public administrations is responsible of [Medical certificate for workspace accident](procedure_name)
-    - Where can I have [Approval of refund for very expensive drugs](procedure_name)
-    - Where can I obtain [Medical certificate for driving license](procedure_name)
+    - Quelle est l'organisme qui délivre [rapport médical](procedure_name)
+    - Quelle est l'administration publique responsable de délivrer[attestation de couverture médicale]((procedure_name)
+    - Quel est l'organisme responsable de donner  [copie du dossier médical](procedure_name)
+    - Quelle est l'administration en charge de délivrer[prise en charge médicale pour une hospitalisation](procedure_name)
+    - Qui peut me donner [certificat médical pour accident de travail](procedure_name)
+    - Ou je peux avoir [rapport médical](procedure_name)
+    - A qui je dois m'adresser pour obtenir [prise en charge des médicaments couteux](procedure_name)
 
 - intent: query_price
   examples: |
-    - how much should I pay to [Medical certificate for driving license](procedure_name)
-    - how much should I pay to have [Medical certificate for workspace accident](procedure_name)
-    - how much should I pay to obtain [Medical certificate for driving license](procedure_name)
-    - how much money should I have pay to [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
-    - What is the price to [a copy of the medical record](procedure_name)
-    - What is the price for [Approval of refund for very expensive drugs](procedure_name)
+    - Combien je dois payer pour avoir un [rapport médical](procedure_name)
+    - Quel est le prix de [certificat médical pour accident de travail](procedure_name)
+    - Quel prix faut-il payer pour avoir [copie du dossier médical](procedure_name)
+    - Donnes moi le prix que je dois payer pour avoir [certificat médical pour accident de travail](procedure_name)
 
 - intent: query_delay
   examples: |
-    - How much time do I need to [obtain a prior authorisation for direct coverage of medical expenses](procedure_name)
-    - How much time do I need to have [Medical certificate for driving license](procedure_name)
-    - How much time do I need to obtain [a copy of the medical record](procedure_name)
-    - how much time does it take to [Medical certificate for workspace accident](procedure_name)
-    - how much time does it take to have [Medical certificate for driving license](procedure_name)
-    - how much time does it take to obtain [Approval of refund for very expensive drugs](procedure_name)
-
+    - Combien de temps il faut pour avoir [rapport médical](procedure_name)
+    - Combien de temps  faut-il pour obtenir [prise en charge des médicaments couteux](procedure_name)
+    - Quel est le temps nécessaire pour avoir [copie du dossier médical](procedure_name)

@@ -1,5 +1,5 @@
 import json
-with open("DatasetGovProc.json", encoding='UTF-8') as file:
+with open("data.json", encoding='UTF-8') as file:
     data = file.read()
     data = json.loads(data)
 required_procedure = "Medical certificate for drinving license"

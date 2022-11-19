@@ -18,7 +18,7 @@ from fuzzywuzzy import fuzz
 import json
 # Reading the JSON provided file as Database
 data = ""
-with open("DatasetGovProc.json", encoding='UTF-8') as file:
+with open("data.json", encoding='UTF-8') as file:
     data = file.read()
     data = json.loads(data)
 
@@ -46,8 +46,8 @@ def get_matched_procedure(procedure :str):
     # Finding the only one string with maximum matching ratio and 
     # its matching ratio all available strings
     sentence, matching_ratio = process.extractOne(procedure, all_procedure_names, scorer=fuzz.token_sort_ratio)
-    
-    if matching_ratio >= 30:
+    print(sentence, matching_ratio)
+    if matching_ratio >= 70:
         return sentence
     else:
         return None
@@ -99,40 +99,40 @@ class ActionProcedureDescription(Action):
                     # all documents in formatted way
                     for i in range(1, len(listOfDocuments)+1):
                         document = str(listOfDocuments[i-1]["title"]).capitalize()
-                        documentsToShow += f"{document}, "
-                    documentsToShow = documentsToShow[:-2]
+                        documentsToShow += f"{i}) {document}.<br>"
+                    documentsToShow = documentsToShow[:-4]
                     
                     # getting the name of the Receiving Administrations site.
                     if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]:
                         receivingAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
                     
-                    final_text = f"You have to submit the following documents for {required_procedure}; {documentsToShow} to the {receivingAdministrations}.<br>"
+                    final_text = f"Vous devez soumettre les documents suivants :<br> {documentsToShow} au niveau de {receivingAdministrations}.<br>"
                     
                     # getting the average delay for the procedure
                     if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
                         timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
                     
-                    final_text += f"This procedure takes {timeDelayed} day(s)"
+                    final_text += f"La procédure prend {timeDelayed} jour(s).<br>"
                     
                     # getting the cost for the procedure
                     if "price" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
                         priceForProcedure = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["price"]
                         if priceForProcedure != 0:
-                            final_text += f" and costs {priceForProcedure} dollars.<br>"
+                            final_text += f"Elle coute {priceForProcedure} DHs.<br>"
                         else:
-                            final_text += f" and the procedure is free of cost.<br>"
+                            final_text += f"Cette procédure est gratuite.<br>"
                     
                     # getting the administration incharge name.
                     if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
-                        receivingAdministrationName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
-                        final_text += f"For more information , you can reach out to the {receivingAdministrationName}."
+                        administrationInChargeName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
+                        final_text += f"Pour plus d'informations , veuillez contacter {administrationInChargeName}."
                     
                     # Stop the search if the required procedure is found in the data
                     break
         
         # Handling the exceptional case
         if required_procedure == None or final_text == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            dispatcher.utter_message(text=f"La procédure demandée n'existe pas .Merci de bien vouloir la reformuler...")
             return []
         
         dispatcher.utter_message(text=final_text)
@@ -173,14 +173,14 @@ class ActionProcedureDocuments(Action):
                         documentsToShow += f"{i}) {document}.<br>"
                     documentsToShow = documentsToShow[:-4]
                     
-                    final_text = f"You can find below the list of required documents :<br>{documentsToShow}"
+                    final_text = f"Voici la liste des documents requis :<br>{documentsToShow}"
                     
                     # Stop the search if the required procedure is found in the data
                     break
         
         # Handling the exceptional case
         if required_procedure == None or final_text == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            dispatcher.utter_message(text=f"La procédure demandée n'existe pas .Merci de bien vouloir la reformuler...")
             return []
         
         dispatcher.utter_message(text=final_text)
@@ -212,16 +212,16 @@ class ActionProcedureDeliveringAdministrations(Action):
         deliveringAdministrations = ""
         for i in range(len(data['data'])):
             if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
-                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["deliveringAdministrations"][0]:
-                    deliveringAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["deliveringAdministrations"][0]["title"]
+                if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]:
+                    deliveringAdministrations = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["receivingAdministrations"][0]["title"]
                 
                 if "title" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]:
                     AdministrationInchargeName = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["administrationInCharge"]["title"]
-                outputToShow += f"You can get {required_procedure} from {deliveringAdministrations}.<br>This procedure is supervised by the {AdministrationInchargeName}."
+                outputToShow += f"Cette procédure est sous la responsabilité de {AdministrationInchargeName}."
         
         # Handling the exceptional case
         if required_procedure == None or outputToShow == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            dispatcher.utter_message(text=f"La procédure demandée n'existe pas .Merci de bien vouloir la reformuler...")
             return []
         
         dispatcher.utter_message(text=outputToShow)
@@ -255,14 +255,14 @@ class ActionProcedurePrice(Action):
                     priceForProcedure = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["price"]
                     priceForProcedure = int(str(priceForProcedure).strip())
                     if priceForProcedure != 0:
-                        final_text += f"The procedure costs {priceForProcedure} dollars.<br>"
+                        final_text += f"Elle coute {priceForProcedure} DHs."
                     else:
-                        final_text += f"The procedure is free of cost.<br>"
+                        final_text += f"Cette procédure est gratuite."
                 break
         
         # Handling the exceptional case
         if required_procedure == None or final_text == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            dispatcher.utter_message(text=f"La procédure demandée n'existe pas .Merci de bien vouloir la reformuler...")
             return []
 
         dispatcher.utter_message(text=final_text)
@@ -293,12 +293,12 @@ class ActionProcedureDelay(Action):
             if required_procedure == data["data"][i]["subThematics"][0]["govprocedure"][0]["title"]:
                 if "averageDelay" in data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]:
                     timeDelayed = data["data"][i]["subThematics"][0]["govprocedure"][0]["details"]["averageDelay"]
-                    final_text += f"This procedure takes {timeDelayed} day(s)."
+                    final_text += f"La procédure prend {timeDelayed} jour(s)."
                 break
         
         # Handling the exceptional case
         if required_procedure == None or final_text == "":
-            dispatcher.utter_message(text=f"Provided procedure name does not found!<br>Please try re-phrasing it...")
+            dispatcher.utter_message(text=f"La procédure demandée n'existe pas .Merci de bien vouloir la reformuler...")
             return []
         
         dispatcher.utter_message(text=final_text)

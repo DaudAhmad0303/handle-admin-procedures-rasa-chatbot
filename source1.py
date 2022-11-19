@@ -32,14 +32,14 @@ def get_matched_procedure(procedure :str):
     # its matching ratio all available strings
     sentence, matching_ratio = process.extractOne(procedure, all_procedure_names, scorer=fuzz.token_sort_ratio)
     
-    if matching_ratio >= 30:
-        return sentence
+    if matching_ratio >= 90:
+        return sentence, matching_ratio
     else:
         return None
 
 
-print(get_matched_procedure("Medical certificate for driving license"))
-print(get_matched_procedure("passport"))
+# print(get_matched_procedure("Medical certificate dr for license"))
+# print(get_matched_procedure("passport"))
 
 # str_list = ['Joe Biden', 'Joseph Biden', 'Joseph R Biden']
 

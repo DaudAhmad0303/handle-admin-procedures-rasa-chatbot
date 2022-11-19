@@ -1,0 +1,587 @@
+{ 
+  "data": [  
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+          "title": "Hospitalisation",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "301973de-a363-42ca-aed9-5586b3cbf36e",
+              "title": "Rapport médical",
+              "description": "Obtention d'un rapport médical pour des fins administratives",
+              "details": {
+                "price": 0,
+                "averageDelay": 15,
+                "receivingAdministrations": {
+                  "id": "88f83bde-55a5-47ec-9ce8-b2e9ba25566c",
+                  "locale": "ar",
+                  "title": "Centres hospitaliers"
+                },
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "40fddd18-af01-43b8-8268-7148848ebf4a",
+                  "locale": "ar",
+                  "title": "le Ministère de la Santé et de la Protection Sociale",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "9d1ab821-6d92-4cb7-87c4-1eddd48bc524",
+                    "title": "Copie de la CIN",
+                    "sort": 0
+                  },
+                  {
+                    "id": "5e9bc581-8470-4cef-bfd7-1eac3bc87267",
+                    "title": "Document prouvant le lien de parenté pour les ayants droits (acte de mariage , acte d'héritage..)",
+                    "procedureId": "301973de-a363-42ca-aed9-5586b3cbf36e",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "97ba73e8-4974-4c06-8616-28d4e8c2d746",
+                    "title": "Ordonnance du tribunal permettant aux ayants droit d'obtenir le rapport médical",
+                    "procedureId": "301973de-a363-42ca-aed9-5586b3cbf36e",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ad82cb43-9375-4b00-80c1-274349da731b",
+      "title": "الأسرة و الحالة المدنية",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "23cd9310-5998-4071-9379-e67cb51514d5",
+          "title": "",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+              "title": "carte RAMED",
+              "description": "postuler au RAMED",
+              "details": {
+                "price": 0,
+                "averageDelay": 7,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Autorité administrative locale compétente"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "Autorité administrative locale compétente"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "ad82cb43-9375-4b00-80c1-274349da731b",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "وزارة الصحة والحماية الاجتماعية",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "7e00b605-199a-42eb-b438-08ce2349125f",
+                    "title": "Une copie de la CIN du demandeur ",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "916c7180-2e3c-4da5-bf0a-cf3614fd9bf9",
+                    "title": "Une copie de la CIN des personnes majeures à charge.",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "2834a1f7-9465-44b1-a7a3-9225b5abb344",
+                    "title": "Un certificat de scolarité des enfants  ou des enfants pris en charge âgés entre 21 et 26 ans",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  },
+                  {
+                    "id": "71f65917-21df-4a42-be92-eb86c31bf065",
+                    "title": "Une attestation de salaire pour chacun des membres salariés dans le ménage.",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 3
+                  },
+                  {
+                    "id": "30498d29-7b7d-45f2-ac28-5419ba612079",
+                    "title": "Un certificat de résidence",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 4
+                  },
+                  {
+                    "id": "a47fa7cf-d564-4056-ae1f-c774a5898345",
+                    "title": "Une attestation de prise en charge effective totale et permanente des enfants qui vivent sous le même toit que le demandeur",
+                    "procedureId": "98e6c48c-e262-4906-835c-032e4fa5bf30",
+                    "subThematicId": "23cd9310-5998-4071-9379-e67cb51514d5",
+                    "linkedProcedures": [],
+                    "sort": 5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "bd3016c8-1746-47b5-ae22-0e158ef20316",
+          "title": "Couverture médicale",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "594dbe8b-916f-483c-a62d-28c2ba08b5f2",
+              "title": "Attestation de couverture médicale",
+              "description": "Attestation de couverture médicale",
+              "details": {
+                "price": 0,
+                "delay": "60 يوما ",
+                "averageDelay": 60,
+                "receivingAdministrations": [
+                  {
+                    "id": "111b463e-f792-4052-bdf6-43c59aabfc41",
+                    "locale": "ar",
+                    "title": "la Caisse Nationale de Sécurité Sociale - CNSS"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "111b463e-f792-4052-bdf6-43c59aabfc41",
+                    "locale": "ar",
+                    "title": "la Caisse Nationale de Sécurité Sociale - CNSS"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "1bbfa8e9-4de5-490e-8eeb-a81d911c20d7",
+                  "locale": "ar",
+                  "title": "اla Caisse Nationale de Sécurité Sociale - CNSS",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "5439008b-4e1c-4a70-b685-f2219c8acf77",
+                    "title": "Formulaire de la demande",
+                    "procedureId": "594dbe8b-916f-483c-a62d-28c2ba08b5f2",
+                    "subThematicId": "bd3016c8-1746-47b5-ae22-0e158ef20316",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "543d-4e1c-4a70-b685-f2219c8acf77",
+                    "title": "Copie de la CIN",
+                    "procedureId": "594dbe8b-916f-483c-a62d-28c2ba08b5f2",
+                    "subThematicId": "bd3016c8-1746-47b5-ae22-0e158ef20316",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "be9467ab-b4ac-43dc-a4b1-753113376bee",
+          "title": "",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "4008e3c7-0e57-4ee6-972b-d6ec4abeea77",
+              "title": "certificat médical d'aptitude physique",
+              "details": {
+                "price": 40,
+                "averageDelay": 7,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "le Ministère de la Santé et de la Protection Sociale ",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "e68dd657-7ab1-4515-8ee5-5f569a91e546",
+                    "title": "Copie de la CIN ou autre document prouvant l'identité du demandeur",
+                    "sort": 0
+                  },
+                  {
+                    "id": "2b8de5d8-e23f-45aa-9f45-e3aa60cd1d13",
+                    "title": "Demande du certificat d'aptitude physique",
+                    "procedureId": "4008e3c7-0e57-4ee6-972b-d6ec4abeea77",
+                    "subThematicId": "be9467ab-b4ac-43dc-a4b1-753113376bee",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3c24d99e-bd57-4875-88dd-b8d136df064d",
+      "title": "Sécurité et sureté",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+          "title": "Securité",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "89058abf-ef1d-421c-905d-f7c9723146eb",
+              "title": "certificat médical pour accident de travail",
+              "details": {
+                "price": 60,
+                "averageDelay": 1,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "3c24d99e-bd57-4875-88dd-b8d136df064d",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "le Ministère de la Santé et de la Protection Sociale ",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "8367b2ec-f6c4-4ed2-8efc-3fceeecbd502",
+                    "title": "Copie de la CIN ou autre document prouvant l'identité du demandeur",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "e09f027c-6a97-4f19-93eb-94f4fdd6d36f",
+                    "title": "Attestation de constatation de l'accident de travail par l'organisme d'assurance de la societé ou l'établissement",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "1a59f7b9-db8e-4d52-80da-ee17114df62e",
+                    "title": "Déclaration de l'employeur",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  },
+                  {
+                    "id": "4ff3fd98-5e94-459d-b2a6-aad69dd126f1",
+                    "title": "Formulaire de la demande renseigné",
+                    "procedureId": "89058abf-ef1d-421c-905d-f7c9723146eb",
+                    "subThematicId": "9ff58858-9ea8-411c-a322-2006d2ebdde1",
+                    "linkedProcedures": [],
+                    "sort": 3
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+          "title": "Hospitalisation",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "df79ce1f-f611-4ae8-8813-493062739dff",
+              "title": "copie du dossier médical",
+              "description": "",
+              "details": {
+                "price": 0,
+                "averageDelay": 3,
+                "receivingAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "d77f3a1b-76cc-4e71-a16f-8896c2edb6bd",
+                    "locale": "ar",
+                    "title": "centres hospitaliers provinciaux et régionaux"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "ab00886d-104d-4b78-a013-7962766e4cfb",
+                  "locale": "ar",
+                  "title": "le Ministère de la Santé et de la Protection Sociale ",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "50854ed4-4433-4f80-a139-dbed8cc13964",
+                    "title": "Copie de la CIN ou autre attestation prouvant l'identité du demandeur",
+                    "procedureId": "df79ce1f-f611-4ae8-8813-493062739dff",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "11d8c9f4-21d1-4c77-9273-b3c20a200632",
+                    "title": "Feuille de sortie",
+                    "procedureId": "df79ce1f-f611-4ae8-8813-493062739dff",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "120daf56-f39f-4361-8022-3fb6d5c8cd59",
+                    "title": "Demande d'obtention de la copie du dossier médical",
+                    "procedureId": "df79ce1f-f611-4ae8-8813-493062739dff",
+                    "subThematicId": "cad98311-a0ef-4a3e-b707-34b468d2fca7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+          "title": "Couverture médicale ",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+              "title": "prise en charge des frais pour une hospitalisation",
+              "details": {
+                "price": 0,
+                "averageDelay": 14,
+                "receivingAdministrations": [
+                  {
+                    "id": "33c27da3-55bb-4840-a556-74c381b650db",
+                    "locale": "ar",
+                    "title": "la caisse nationale des organismes de prévoyance sociale-CNOPS"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "83a797ed-5d3a-44e0-9abd-e93e3b4e7119",
+                    "locale": "ar",
+                    "title": "la caisse nationale des organismes de prévoyance sociale-CNOPS"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "b08b3727-775a-460c-b31f-a3048323e40b",
+                  "locale": "ar",
+                  "title": "اla caisse nationale des organismes de prévoyance sociale-CNOPS",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "b0484f92-a575-464b-93cf-2b3927637cc7",
+                    "title": "Formulaire de demande de prise en charge",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "PJ2-40f009fb-d5fa-459d-aa2c-874071e12030",
+                    "title": "Note confidentielle dument signé et cacheté par le médecin traitant ",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "6083f051-4bc3-4cfe-b719-c3d9dbb9a6eb",
+                    "title": "Examens cliniques et semi-cliniques",
+                    "procedureId": "d07488a8-1615-43aa-af60-0c1c88f0c002",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+      "title": "Santé et affaires sociales ",
+      "description": "_",
+      "subThematics": [
+        {
+          "id": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+          "title": "",
+          "description": "_",
+          "govprocedure": [
+            {
+              "id": "f161ba70-3e5c-4590-af02-00014a3efe76",
+              "title": "prise en charge des médicaments couteux",
+              "description": "",
+              "details": {
+                "price": 0,
+                "averageDelay": 11,
+                "receivingAdministrations": [
+                  {
+                    "id": "83a797ed-5d3a-44e0-9abd-e93e3b4e7119",
+                    "locale": "ar",
+                    "title": "la caisse nationale des organismes de prévoyance sociale-CNOPS"
+                  }
+                ],
+                "deliveringAdministrations": [
+                  {
+                    "id": "33c27da3-55bb-4840-a556-74c381b650db",
+                    "locale": "ar",
+                    "title": "la caisse nationale des organismes de prévoyance sociale-CNOPS"
+                  }
+                ],
+                "linkedSubThematic": null,
+                "thematicId": "87a96a4a-06ac-4bfa-b533-a26e4bb4fb33",
+                "administrationInCharge": {
+                  "id": "b08b3727-775a-460c-b31f-a3048323e40b",
+                  "locale": "ar",
+                  "title": "la caisse nationale des organismes de prévoyance sociale-CNOPS",
+                  "proceduresCount": null
+                },
+                "validityDurationInDays": null,
+                "documents": [
+                  {
+                    "id": "d8b80980-9391-441f-a366-02c31780ec65",
+                    "title": "Feuille de soins dûment remplie et visée par le médecin traitant",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 0
+                  },
+                  {
+                    "id": "2d7840c0-90c5-482c-88aa-9bdf1d176035",
+                    "title": "Rapports médicaux et examens cliniques et semi-cliniques justifiant la prescription",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 1
+                  },
+                  {
+                    "id": "579a1a9f-0cf2-4632-b36f-e19f6a8d8064",
+                    "title": "Prescription des médicaments ou des vaccins visée par le médecin traitant en mentionnant l’identité de bénéficiaire",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 2
+                  },
+                  {
+                    "id": "579a1a9f-0cddd-4632-b36f-e19f6a8d8064",
+                    "title": "Prospectus des médicaments.",
+                    "procedureId": "f161ba70-3e5c-4590-af02-00014a3efe76",
+                    "subThematicId": "d5319eb1-c65f-4f2a-9928-4e23f2a071e7",
+                    "linkedProcedures": [],
+                    "sort": 3
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
