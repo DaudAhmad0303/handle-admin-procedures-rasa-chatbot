@@ -1,0 +1,18 @@
+In order to deploy/run the RASA Chatbot on local machine follow the below commands:
+
+1. First activate the virutal environment and make sure the RASA is already installed on you machine:
+$ rasa -h
+
+2. First train the model:
+$ rasa train --force
+
+3. Now, run the RASA server:
+$ rasa run -m models --enable-api --cors "*"
+
+4. You will also need to run the action server:
+$ rasa run actions
+
+5. Now open the file webview/index.html and start talking to you assistant.
+
+
+-------------------------------------------------------------------------------------------------------

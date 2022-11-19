@@ -46,7 +46,7 @@ def get_matched_procedure(procedure :str):
     # Finding the only one string with maximum matching ratio and 
     # its matching ratio all available strings
     sentence, matching_ratio = process.extractOne(procedure, all_procedure_names, scorer=fuzz.token_sort_ratio)
-    print(sentence, matching_ratio)
+    # print(sentence, matching_ratio)
     if matching_ratio >= 70:
         return sentence
     else:
@@ -80,7 +80,7 @@ class ActionProcedureDescription(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure, self.name())
+        # print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
@@ -153,7 +153,7 @@ class ActionProcedureDocuments(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure, self.name())
+        # print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
@@ -201,7 +201,7 @@ class ActionProcedureDeliveringAdministrations(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure, self.name())
+        # print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
@@ -242,7 +242,7 @@ class ActionProcedurePrice(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure, self.name())
+        # print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
@@ -282,7 +282,7 @@ class ActionProcedureDelay(Action):
         # storing the entity `procedure_name` received through intent
         received_procedure = next(tracker.get_latest_entity_values("procedure_name"), None)
         
-        print(received_procedure, self.name())
+        # print(received_procedure, self.name())
         # getting the most possible matching procedure name from the database, 
         # if the user mis-spelled the procedure name
         required_procedure = get_matched_procedure(received_procedure)
